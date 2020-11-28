@@ -1,0 +1,11 @@
+﻿@using ofCourse.Models
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detail</h2>
+
+<p>@Model.FirstName @Model.LastName</p>
+<p>StudentId: @Model.Id</p>
+<p>Is Enrolled: @Model.isEnrolled</p>

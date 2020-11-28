@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>ofCourse</h1>
+    <p class="lead">ofCourse is the simplest application in the world to manage your courses and your students.</p>
+    <p><a href="https://en.wikipedia.org/wiki/Nicolas_Cage" class="btn btn-primary btn-lg">Get started! &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Meet the Creator</h2>
+        <p>
+        </p>
+        <p><a class="btn btn-default" href="https://en.wikipedia.org/wiki/Nicolas_Cage">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Courses</h2>
+        <p>View or Manage Courses.</p>
+        <p><a class="btn btn-default" @Html.ActionLink("Click here", "CourseList", "Courses")></a> Click here &raquo;</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Students</h2>
+        <p>Keep a list of all the brightest pupils in the whole universe.</p>
+        <p><a class="btn btn-default"@Html.ActionLink("Click here", "StudentList", "Students")></a></p>
+    </div>
+</div>

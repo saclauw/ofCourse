@@ -1,0 +1,36 @@
+﻿@using ofCourse.Controllers
+@model IEnumerable<ofCourse.Models.Course>
+@{
+    ViewBag.Title = "ReadOnlyCourseList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Course List</h2>
+
+@if (!Model.Any())
+{
+    <text>We don't have any courses yet.</text>
+}
+else
+{
+    <table class="table	table-bordered	table-hover">
+        <tr>
+            <th>Course Name</th>
+            <th>Course Description</th>
+            <th>Tutor</th>
+        </tr>
+        @foreach (var course in Model)
+        {
+            <tr>
+                <td>@course.CourseName</td>
+                <td>@course.CourseDescription</td>
+                <td>@course.TutorName</td>
+            </tr>
+        }
+    </table>
+
+
+
+
+}
+

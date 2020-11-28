@@ -1,0 +1,41 @@
+﻿@using ofCourse.Controllers
+@model IEnumerable<ofCourse.Models.Course>
+@{
+    ViewBag.Title = "CourseList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Course List</h2>
+
+@if (!Model.Any())
+{
+    <text>We don't have any courses yet.</text>
+}
+else
+{
+    <table class="table	table-bordered	table-hover">
+        <tr>
+            <th>Detail</th>
+            <th>Course Name</th>
+            <th>Tutor</th>
+        </tr>
+        @foreach (var course in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink("View", "Detail", "Courses", new { id = course.Id }, course.Id) |
+                    @Html.ActionLink("Edit", "Edit", "Courses", new {id = course.Id}, course.Id)</td>
+                <td>@course.CourseName</td>
+                <td>@course.TutorName</td>
+            </tr>
+        }
+    </table>
+
+
+
+
+}
+
+@using (Html.BeginForm("New", "Courses"))
+{
+    <button type="submit" class="btn btn-primary">Add New Course</button>
+}

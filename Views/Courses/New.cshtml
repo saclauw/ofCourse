@@ -1,0 +1,44 @@
+﻿@model ofCourse.Models.Course
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add New Course</h2>
+
+
+@using (Html.BeginForm("Save", "Courses"))
+{
+    @Html.ValidationSummary()
+    <div class="form-group">
+        @Html.LabelFor(m => m.CourseName)
+        @Html.TextBoxFor(m => m.CourseName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.CourseName)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.CourseDescription)
+        @Html.TextBoxFor(m => m.CourseDescription, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.CourseDescription)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.TutorName)
+        @Html.TextBoxFor(m => m.TutorName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.TutorName)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.CourseRating)
+        @Html.TextBoxFor(m => m.CourseRating, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.CourseRating)
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}
